@@ -3,6 +3,6 @@
 
 <select id="districtId" name="districtId" class="form-control">
     <c:forEach var="district" items="${districts}">
-        <option value="${district.id}">${district.name}</option>
+        <option value="${district.id}" data-code="${district.code}">${district.name}</option>
     </c:forEach>
 </select>

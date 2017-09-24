@@ -26,11 +26,9 @@
     <div class="col-md-12">
         <div class="portlet box" style="margin-bottom: 0;">
             <div class="portlet-body form">
-                <form:form commandName
-                           ="searchForm" action="userList" cssClass="form-horizontal"  method="post">
+                <form:form commandName="searchForm" action="userList" cssClass="form-horizontal"  method="post">
                     <div class="form-body">
-
-
+                        
                         <div class="form-group">
                             <label class="col-md-2 control-label">关键词</label>
 

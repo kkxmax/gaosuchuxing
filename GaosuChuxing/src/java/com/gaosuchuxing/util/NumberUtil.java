@@ -54,11 +54,15 @@ public class NumberUtil {
         return -1;
     }
     
-    public static Double strToDouble(String str) {
+    public static Double strToDouble(String str, double defaultValue) {
         try {
             return Double.parseDouble(str);
         } catch (Exception ex) {}
-        return -1.0;
+        return defaultValue;
+    }
+    
+    public static Double strToDouble(String str) {        
+        return strToDouble(str, -1.0);
     }
     
     /*

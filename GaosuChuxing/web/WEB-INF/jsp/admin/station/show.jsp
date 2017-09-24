@@ -44,7 +44,7 @@
                             <label class="col-md-2 control-label">服务区图片<span class="required" aria-required="true"> *</span></label>
 
                             <div class="col-md-5">
-                                <img src="/${orderForm.imagePath}" alt="Icon" class="img-responsive" />
+                                <img src="/${stationForm.imagePath}" alt="Icon" class="img-responsive" />
                             </div>
                         </div>    
 
@@ -72,9 +72,24 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">服务区位置<span class="required" aria-required="true"> *</span></label>
 
-                            <div class="col-md-5">
-                                
+                            <div class="col-md-6">
+                                <div class="portlet box blue" style="border-top: 1px solid #60aee4;" id="station-map-container">
+                                    <div class="portlet-body">
+                                        <div class="form-inline margin-bottom-10">
+                                            <div class="input-group col-md-9">
+                                                <input type="text" class="form-control" id="search-address" placeholder="请输入关键字进行搜索" autocomplete="off">
+                                                <span class="input-group-btn">
+                                                    <a href="javascript:;" class="btn blue" id="btn-search-address" onclick="onSearchAddress()"><i class="fa fa-search"></i></a>
+                                                </span>                 
+                                            </div>
+                                        </div>
+                                        <div id="station-map" class="gmaps"></div>
+                                    </div>
+                                </div>
                             </div>
+                            
+                            <form:hidden path="longitude" readonly="true" />
+                            <form:hidden path="latitude" readonly="true" />
                         </div>
                             
                         <div class="form-group">

@@ -95,16 +95,17 @@ $(function() {
     stationList();
     
     $('#districtParentId').live('change', function() {
-        $.ajax({
-            cache: false,
-            url: $('#get-district-list-url').val(),
-            data: {parentId: $(this).val()},
-            dataType: "html",
-            success: function (_html) {
-                $('.district-opt').empty().append(_html);
-                $('#searchForm').submit();
-            }
-        });
+//        $.ajax({
+//            cache: false,
+//            url: $('#get-district-list-url').val(),
+//            data: {parentId: $(this).val()},
+//            dataType: "html",
+//            success: function (_html) {
+//                $('.district-opt').empty().append(_html);
+//                $('#searchForm').submit();
+//            }
+//        });
+        $('#searchForm').submit();
     });
     
     $('#districtId').live('change', function() {

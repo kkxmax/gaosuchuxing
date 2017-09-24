@@ -37,7 +37,7 @@
                             你有一些表单错误。 请检查下面。
                         </div>-->
 
-                        <form:input type="hidden" path="managerId" />    
+                        <form:hidden path="managerId" />    
 
                         <div class="form-group">
                             <label class="col-md-2 control-label">旧密码<span class="required" aria-required="true"> *</span></label>

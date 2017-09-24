@@ -10,6 +10,11 @@ import java.util.Date;
 public class DeliverVO {
     
     private int id;
+    private String deliverId;
+    private String name;
+    private String telNo;
+    private String password;
+    private Date regDate;
 
     public int getId() {
         return id;
@@ -19,8 +24,6 @@ public class DeliverVO {
         this.id = id;
     }
 
-    private String deliverId;
-
     public String getDeliverId() {
         return deliverId;
     }
@@ -28,8 +31,6 @@ public class DeliverVO {
     public void setDeliverId(String deliverId) {
         this.deliverId = deliverId;
     }
-
-    private String name;
 
     public String getName() {
         return name;
@@ -39,8 +40,6 @@ public class DeliverVO {
         this.name = name;
     }
 
-    private String telNo;
-
     public String getTelNo() {
         return telNo;
     }
@@ -49,8 +48,6 @@ public class DeliverVO {
         this.telNo = telNo;
     }
 
-    private String password;
-
     public String getPassword() {
         return password;
     }
@@ -58,8 +55,6 @@ public class DeliverVO {
     public void setPassword(String password) {
         this.password = password;
     }
-
-        private Date regDate;
 
     public Date getRegDate() {
         return regDate;

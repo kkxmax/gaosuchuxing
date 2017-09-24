@@ -5,6 +5,7 @@
  */
 package com.gaosuchuxing.util;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -70,6 +71,13 @@ public class DateUtil {
     
     public static Date getOnlyDate(Date date) {
         return parseDate(formatDate(date));
+    }
+    
+    public static Date timestampToDate(Timestamp timestamp) {
+        if (timestamp == null)
+            return null;
+        else
+            return new Date(timestamp.getTime());
     }
     
     /*

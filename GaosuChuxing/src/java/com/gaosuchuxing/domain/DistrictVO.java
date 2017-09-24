@@ -8,7 +8,17 @@ package com.gaosuchuxing.domain;
 public class DistrictVO {
     private int id;
     private String name;
-    private int parentId;
+    private int parentId;    
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     
     public int getParentId() {
         return parentId;

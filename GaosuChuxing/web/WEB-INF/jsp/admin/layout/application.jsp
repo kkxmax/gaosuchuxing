@@ -158,6 +158,20 @@
         <input type="hidden" id="validate-deliver-id-url" value="<c:url value="/admin/validateDeliverId"/>" />
         <input type="hidden" id="get-district-list-url" value="<c:url value="/admin/getDistrictList"/>" />
         <input type="hidden" id="validate-station-name-url" value="<c:url value="/admin/validateStationName"/>" />
+        <input type="hidden" id="validate-shop-name-url" value="<c:url value="/admin/validateShopName"/>" />
+        <input type="hidden" id="get-shop-list-url" value="<c:url value="/admin/getShopList"/>" />
+        <input type="hidden" id="delete-shop-url" value="<c:url value="/admin/deleteShop"/>" />
+        <input type="hidden" id="shop-form-url" value="<c:url value="/admin/shopForm"/>" />
+        <input type="hidden" id="get-shop-list-by-shop-kind-url" value="<c:url value="/admin/getShopListByShopKind"/>" />
+        <input type="hidden" id="get-goods-kind-list-by-shop-kind-url" value="<c:url value="/admin/getGoodsKindListByShopKind"/>" />
+        <input type="hidden" id="validate-goods-name-url" value="<c:url value="/admin/validateGoodsName"/>" />
+        <input type="hidden" id="validate-activity-name-url" value="<c:url value="/admin/validateActivityName"/>" />
+        <input type="hidden" id="get-tmp-activity-detail-url" value="<c:url value="/admin/getTmpActivityDetail"/>" />
+        <input type="hidden" id="add-tmp-activity-detail-url" value="<c:url value="/admin/addTmpActivityDetail"/>" />
+        <input type="hidden" id="delete-tmp-activity-detail-url" value="<c:url value="/admin/deleteTmpActivityDetail"/>" />
+        <input type="hidden" id="update-tmp-activity-detail-url" value="<c:url value="/admin/updateTmpActivityDetail"/>" />
+        <input type="hidden" id="get-activity-amount-url" value="<c:url value="/admin/getActivityAmount"/>" />
+        <input type="hidden" id="get-coupon-qty-url" value="<c:url value="/admin/getCouponQty"/>" />
         <!-- END HIDDEN FEILED -->
         
         <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -182,7 +196,7 @@
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
         <script type="text/javascript" src="<c:url value="/assets/global/plugins/bootstrap-select/bootstrap-select.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js"/>"></script>
-        <script type="text/javascript" src="<c:url value="/assets/global/plugins/select2/select2.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="/assets/global/plugins/select2/select2.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"/>"></script>        
         <script type="text/javascript" src="<c:url value="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"/>"></script>
@@ -231,7 +245,7 @@
                Demo.init(); // init demo features
                FormiCheck.init(); // init page demo
                TableManaged.init(); 
-               FormValidation.init();
+//               FormValidation.init();
                ComponentsPickers.init();
                ComponentsDropdowns.init();
                Portfolio.init();

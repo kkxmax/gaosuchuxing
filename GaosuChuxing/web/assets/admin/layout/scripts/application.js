@@ -25,3 +25,15 @@ function showInformation(_msg) {
     $('#information-message-msg').html(_msg);
     $('#information-message-modal').modal({show: true});
 }
+
+$(function() {
+    $(".mask_integer").inputmask({
+        "mask": "9",
+        "repeat": 10,
+        "greedy": false
+    }); // ~ mask "9" or mask "99" or ... mask "9999999999"
+        
+    $(".mask_decimal").inputmask('decimal', {
+        rightAlign: false
+    }); //disables the right alignment of the decimal input
+});

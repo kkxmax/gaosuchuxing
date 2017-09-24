@@ -23,7 +23,27 @@ public class ShopVO {
     private String districtParentName;    
     private int shopKindId;    
     private String shopingKindName;    
-    private String description;
+    private String description;    
+    private String address;    
+    private String shopKindName;
+
+    public String getShopKindName() {
+        return shopKindName;
+    }
+
+    public void setShopKindName(String shopKindName) {
+        this.shopKindName = shopKindName;
+    }
+
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     
     public String getDescription() {
         return description;

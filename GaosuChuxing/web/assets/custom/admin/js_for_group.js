@@ -44,7 +44,7 @@ var validateOptions = {
     } 
 };
 
-var handleValidateManagerForm = function() {
+var handleValidateGroupForm = function() {
     var form1 = $('#new-group-form');
 
     //IMPORTANT: update CKEDITOR textarea with actual content before submit
@@ -223,7 +223,7 @@ var groupList = function () {
 }
 
 $(function() {
-    handleValidateManagerForm();
+    handleValidateGroupForm();
     
     validationGroupName();
     
@@ -271,6 +271,10 @@ function onSetRole(_groupId) {
         success: function(_result) {
             if (_result != null) {
                 $('#role-permission-dlg').modal({show: true});
+                
+                for (var i = 0; i < permissionOpt.length; i++) {
+                    $('#permission_' + permissionOpt[i]).iCheck('uncheck');
+                }
                 
                 var roles = eval(_result);
                 for (var i = 0; i < roles.roles.length; i++) {
@@ -326,5 +330,13 @@ function onDeleteGroup(_groupId) {
 }
 
 function onAddNewGroup() {
+    var validator = $( "#new-group-form" ).validate();
+    validator.resetForm();
+    
+    $('#new-group-form input').each(function() {
+        $(this).closest('.form-group').removeClass('has-error');
+    });
+    
+    $('#groupName').val('');
     $('#add-group-dlg').modal({show: true});
 }

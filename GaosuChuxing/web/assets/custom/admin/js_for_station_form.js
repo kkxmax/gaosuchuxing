@@ -167,6 +167,8 @@ var handleValidateStationForm = function() {
 
             if ($('#districtId').val() == null || $('#districtId').val() == '') {
                 showMessage('请选择所属城市');
+            } else if ($('#longitude').val() == '' && $('#latitude').val() == '' || isNaN($('#longitude').val()) || isNaN($('#latitude').val()) || parseFloat($('#longitude').val()) == 0 || parseFloat($('#latitude').val()) == 0) {
+                showMessage('请选择服务区位置');
             } else if ($('#img_file').val() == '' && $('#id').val() == '0') {
                 showMessage('请选择服务区图片');
             } else {
@@ -275,12 +277,171 @@ $(function() {
             dataType: "html",
             success: function (_html) {
                 $('.district-opt').empty().append(_html);
+                
+                var cityCode = $('#districtId option:selected').attr("data-code");
+                if (cityCode != '') {
+                    $('#station-map-container').show();
+                    onMapSearch(cityCode);
+                } else {
+                    $('#station-map-container').hide();
+                }
             }
         });
     });
     
-//    $('#sel-district').live('change', function() {
-//        $('#districtId').val($(this).val());
-//    });
+    $('#districtId').live('change', function() {
+        var cityCode = $('#districtId option:selected').attr("data-code");
+
+        if (cityCode != '') {
+            $('#station-map-container').show();            
+            onMapSearch(cityCode);
+        } else {
+            $('#station-map-container').hide();
+        }
+    });
+    
+    if ($('#districtParentId').val() == '' || $('#districtId').val() == null || $('#districtId').val() == '') {
+        $('#station-map-container').hide();
+    }
+    
+    setMarker();
 });
+
+function setMarker() {
+    if ($('#longitude').val() != '' && $('#latitude').val() != '') {
+        addMarker($('#longitude').val(), $('#latitude').val());
+        
+        map.setZoom(15);
+        map.setCenter([parseFloat($('#longitude').val()), parseFloat($('#latitude').val())]);
+    }
+}
+
+function onMapSearch(_cityCode) {    
+    districtSearch.search(_cityCode, function(status, result) {
+        if(status=='complete'){
+            map.setZoom(11);
+            map.setCenter(result.districtList[0].center);
+        }
+    });
+
+    autoComplete.setCity(_cityCode);
+    addressSearch.setCity(_cityCode);
+    
+    $('#search-address').val('');
+    
+    onClickPoint(false);
+}
+
+function onSearchAddress() {
+    var searchKey = $('#search-address').val();
+    
+    if (searchKey != '') {
+        addressSearch.search(searchKey, function(status, result){
+            if(status=='complete'){
+                map.setZoom(15);
+                map.setCenter(result.districtList[0].center);                
+            }
+        });
+    }
+    
+    onClickPoint(false);
+    
+    return false;
+}
+
+function onClickPoint(_isClickPoint) {    
+    isClickPoint = _isClickPoint;
+    
+//    if (isClickPoint) {
+//        map.setDoubleClickZoom(false);
+//        map.setDragEnable(false);
+//    } else {
+//        map.setDoubleClickZoom(true);
+//        map.setDragEnable(true);
+//    }
+}
+
+function addMarker(lng, lat) {
+    if (marker != null) {
+        marker.setMap(null);
+        marker = null;
+    }
+    
+    marker = new AMap.Marker({
+        icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_r.png",
+        position: [lng, lat],
+        draggable: true,
+        cursor: 'move'
+    });
+        
+    var markerContent = document.createElement("div");    
+        
+    var markerImg = document.createElement("img");
+    markerImg.className = "markerlnglat";
+    markerImg.src = "http://webapi.amap.com/theme/v1.3/markers/n/mark_r.png";
+    markerContent.appendChild(markerImg);
+        
+    if ($('#name').val() != '') {
+        var markerSpan = document.createElement("span");
+        markerSpan.className = 'marker';
+        markerSpan.innerHTML = $('#name').val();
+        markerContent.appendChild(markerSpan);    
+        marker.setContent(markerContent);        
+    }
+    
+    marker.setMap(map);
+    
+    $('#longitude').val(lng);
+    $('#latitude').val(lat);
+        
+    marker.on('mouseup', function(e) {
+        console.log('mouseup' + ", " + e.lnglat.getLng() +", " + e.lnglat.getLat());
+        $('#longitude').val(e.lnglat.getLng());
+        $('#latitude').val(e.lnglat.getLat());
+    });
+}
+
+var marker, map = new AMap.Map('station-map', {
+   resizeEnable: true,
+   zoom:11
+});
+
+var opts = {
+    level: "city",
+    subdistrict: 1,   //返回下一级行政区
+    showbiz:false  //最后一级返回街道信息
+};
+
+var districtSearch, autoComplete, addressSearch, isClickPoint;
+AMap.plugin(['AMap.DistrictSearch','AMap.Autocomplete'],function(){
+    districtSearch = new AMap.DistrictSearch(opts);
+    autoComplete = new AMap.Autocomplete({input: "search-address"});
+    addressSearch = new AMap.Autocomplete();
+    
+    AMap.event.addListener(autoComplete, "select", function(e) {
+        if (e.poi && e.poi.location) {
+            map.setZoom(15);
+            map.setCenter(e.poi.location);
+            
+            onClickPoint(false);
+        }
+    });
+});
+
+map.on('click', function(e){
+    if (isClickPoint) {
+        confirmYesNoMessage("确定选择该位置？", function(msg) {
+            if (msg == true) {
+                onClickPoint(false);
+                
+                addMarker(e.lnglat.getLng(), e.lnglat.getLat());
+            }
+        })
+    }
+}); 
+
+
+
+
+
 

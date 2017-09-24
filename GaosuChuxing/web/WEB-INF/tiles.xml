@@ -84,6 +84,9 @@
         <put-attribute name="title" value="高速出行后台 - 服务区管理" type="string" />
         <put-attribute name="body" value="/WEB-INF/jsp/admin/station/form.jsp" />
         <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="http://cache.amap.com/lbs/static/es5.min.js" />
+            <add-attribute value="http://webapi.amap.com/maps?v=1.4.0&amp;key=ebb8d48289611406e94cde62801b0276" />
+            <add-attribute value="http://cache.amap.com/lbs/static/addToolbar.js" />
             <add-attribute value="/assets/custom/admin/js_for_station_form.js" />
         </put-list-attribute>
     </definition>
@@ -93,11 +96,126 @@
     <definition name="adminStationShowLayout" extends="adminApplicationLayout">
         <put-attribute name="title" value="高速出行后台 - 服务区管理" type="string" />
         <put-attribute name="body" value="/WEB-INF/jsp/admin/station/show.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="http://cache.amap.com/lbs/static/es5.min.js" />
+            <add-attribute value="http://webapi.amap.com/maps?v=1.4.0&amp;key=ebb8d48289611406e94cde62801b0276" />
+            <add-attribute value="http://cache.amap.com/lbs/static/addToolbar.js" />
+            <add-attribute value="/assets/custom/admin/js_for_station_show.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin station form tiles -->
+    
+    <!-- admin shop layout tiles -->
+    <definition name="adminShopLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 门店管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/shop/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_shop.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin shop layout tiles -->
+    
+    <!-- admin station form layout tiles -->
+    <definition name="adminShopFormLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 门店管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/shop/form.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_shop_form.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin station form tiles -->
+    
+    <!-- admin station show layout tiles -->
+    <definition name="adminShopShowLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 门店管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/shop/show.jsp" />
 <!--        <put-list-attribute name="javascripts" cascade="true">
-            <add-attribute value="/assets/custom/admin/js_for_station_form.js" />
+            <add-attribute value="/assets/custom/admin/js_for_shop_form.js" />
         </put-list-attribute>-->
     </definition>
     <!-- admin station form tiles -->
+    
+    <!-- admin shopkind layout tiles -->
+    <definition name="adminShopKindLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 门店管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/shopkind/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_shopkind.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin shopkind tiles -->
+    
+    <!-- admin goodskind layout tiles -->
+    <definition name="adminGoodsKindLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 商品分类" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/goodskind/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_goodskind.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin goodskind tiles -->
+    
+    <!-- admin order layout tiles -->
+    <definition name="adminOrderLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 订单管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/order/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_order.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin order tiles -->
+    
+    <!-- admin order show layout tiles -->
+    <definition name="adminOrderShowLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 订单管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/order/show.jsp" />
+<!--        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_order_form.js" />
+        </put-list-attribute>-->
+    </definition>
+    <!-- admin order show tiles -->
+    
+    <!-- admin stat deliver layout tiles -->
+    <definition name="adminStatDeliverLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 订单管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/statdeliver/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_statdeliver.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin stat deliver tiles -->
+    
+    <!-- admin activity layout tiles -->
+    <definition name="adminActivityLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 活动管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/activity/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_activity.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin activity layout tiles -->
+    
+    <!-- admin activity form layout tiles -->
+    <definition name="adminActivityFormLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 活动管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/activity/form.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_activity_form.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin activity form tiles -->
+    
+    <definition name="activityDetailsLayout" template="/WEB-INF/jsp/admin/activity/details.jsp" />
+    
+    <!-- admin activity show layout tiles -->
+    <definition name="adminActivityShowLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 活动管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/activity/show.jsp" />
+<!--        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_activity_form.js" />
+        </put-list-attribute>-->
+    </definition>
+    <!-- admin activity show tiles -->
     
     <!-- jiw start -->
     
@@ -141,4 +259,71 @@
     </definition>
     <!-- admin manager layout tiles -->
     
+    <!-- admin station layout tiles -->
+    <definition name="adminGoodsLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 商品管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/goods/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_goods.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin station layout tiles -->
+    
+    <!-- admin station form layout tiles -->
+    <definition name="adminGoodsFormLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 商品管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/goods/form.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_goods_form.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin station form tiles -->
+    
+    <!-- admin station show layout tiles -->
+    <definition name="adminGoodsShowLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 商品管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/goods/show.jsp" />
+    </definition>
+    <!-- admin station show layout tiles -->
+    
+    
+    <!-- admin activity_notice layout tiles -->
+    <definition name="adminActivityNoticeLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 活动预告" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/activity_notice/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_activitynotice.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin activity_notice layout tiles -->
+    
+    <!-- admin activity_notice form layout tiles -->
+    <definition name="adminActivityNoticeFormLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 活动预告" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/activity_notice/form.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_activitynotice_form.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin activity_notice form tiles -->
+    
+    <!-- admin activity_notice show layout tiles -->
+    <definition name="adminActivityNoticeShowLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 活动预告" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/activity_notice/show.jsp" />
+    </definition>
+    <!-- admin activity_notice show layout tiles -->
+    
+    <!-- admin user_coupon layout tiles -->
+    <definition name="adminUserCouponLayout" extends="adminApplicationLayout">
+        <put-attribute name="title" value="高速出行后台 - 优惠券管理" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/user_coupons/list.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/custom/admin/js_for_user_coupons.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- admin user_coupon layout tiles -->
+    
+    <definition name="shopListLayout" template="/WEB-INF/jsp/admin/shop_list_by_kind.jsp" />
+    <definition name="goodsKindListLayout" template="/WEB-INF/jsp/admin/goods_kind_list_by_shop_kind.jsp" />
 </tiles-definitions>

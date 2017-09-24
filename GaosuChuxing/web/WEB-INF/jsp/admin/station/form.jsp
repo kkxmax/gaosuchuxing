@@ -55,7 +55,7 @@
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 130px;">
                                         <c:if test="${not empty stationForm.imagePath}">
-                                            <img src="/${orderForm.imagePath}" alt="Icon"/>
+                                            <img src="/${stationForm.imagePath}" alt="Icon"/>
                                         </c:if>
                                         <c:if test="${empty stationForm.imagePath}">
                                             <img src="<c:url value="/assets/admin/pages/img/no-image.png"/>" alt="Icon"/>
@@ -83,7 +83,7 @@
                                 <form:select path="districtParentId" cssClass="form-control">
                                     <form:option value="-2">--选择省份--</form:option>
                                     <c:forEach var="parentDistrict" items="${parentDistrictList}">
-                                        <form:option value="${parentDistrict.id}">${parentDistrict.name}</form:option>
+                                        <form:option value="${parentDistrict.id}" data-code="${parentDistrict.code}">${parentDistrict.name}</form:option>
                                     </c:forEach>
                                 </form:select>
                             </div>
@@ -95,7 +95,7 @@
                                 <c:if test="${url != '0'}">
                                     <form:select path="districtId" cssClass="form-control">
                                         <c:forEach var="district" items="${districtList}">
-                                            <form:option value="${district.id}">${district.name}</form:option>
+                                            <form:option value="${district.id}" data-code="${district.code}">${district.name}</form:option>
                                         </c:forEach>
                                     </form:select>
                                 </c:if>
@@ -105,7 +105,25 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">服务区位置<span class="required" aria-required="true"> *</span></label>
 
-                            <div class="col-md-5">
+                            <div class="col-md-6">
+                                <div class="portlet box blue" style="border-top: 1px solid #60aee4;" id="station-map-container">
+                                    <div class="portlet-body">
+                                        <div class="form-inline margin-bottom-10">
+                                            <div class="input-group col-md-9">
+                                                <input type="text" class="form-control" id="search-address" placeholder="请输入关键字进行搜索" autocomplete="off">
+                                                <span class="input-group-btn">
+                                                    <a href="javascript:;" class="btn blue" id="btn-search-address" onclick="onSearchAddress()"><i class="fa fa-search"></i></a>
+                                                </span>                 
+                                            </div>
+                                            
+                                            <input type="button" id="gmap_routes_start" class="btn blue" value="开始打点" style="min-width: 90px;" onclick="onClickPoint(true);">
+                                        </div>
+                                        <div id="station-map" class="gmaps"></div>
+                                    </div>
+                                </div>
+                                    
+                                <form:hidden path="longitude" readonly="true" />
+                                <form:hidden path="latitude" readonly="true" />
                                 
                             </div>
                         </div>
@@ -115,7 +133,7 @@
 
                             <div class="col-md-5">
                                 <form:select cssClass="form-control validation-control" path="status">
-                                    <form:option value="">--请选择服务区状态--</form:option>
+                                    <form:option value="" code= "">--请选择服务区状态--</form:option>
                                     <form:option value="未开放">未开放</form:option>
                                     <form:option value="已开放">已开放</form:option>
                                 </form:select>
@@ -126,7 +144,7 @@
                             <label class="col-md-2 control-label">配送员<span class="required" aria-required="true"> *</span></label>
 
                             <div class="col-md-5">
-                                <form:select cssClass="form-control validation-control" path="deliverId">
+                                <form:select cssClass="form-control validation-control select2me" path="deliverId" data-placeholder="--请选择配送员--">
                                     <form:option value="0">--请选择配送员--</form:option>
                                     <c:forEach var="deliver" items="${deliverList}">
                                         <form:option value="${deliver.id}">${deliver.name}</form:option>

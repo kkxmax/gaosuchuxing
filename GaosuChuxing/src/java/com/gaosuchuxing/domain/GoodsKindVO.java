@@ -11,7 +11,17 @@ public class GoodsKindVO {
     private int id;
     private String name;
     private Date regDate;    
-    private int ShopKindId;
+    private int ShopKindId;    
+    private String shopKindName;
+
+    public String getShopKindName() {
+        return shopKindName;
+    }
+
+    public void setShopKindName(String shopKindName) {
+        this.shopKindName = shopKindName;
+    }
+
 
     public int getShopKindId() {
         return ShopKindId;

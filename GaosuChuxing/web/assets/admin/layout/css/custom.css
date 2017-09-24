@@ -58,3 +58,26 @@ Change Quick Sidebar Width
   margin-left: -370px;
 }
 */
+body {
+    font-family: Microsoft YaHei;
+}
+
+table.dataTable tbody th.dt-body-center,
+table.dataTable tbody td.dt-body-center {
+  text-align: center;
+}
+
+table.dataTable tbody td.no-wrap {
+  white-space: nowrap;
+}
+
+.marker {
+    color: #fff;
+    padding: 4px 10px;
+    border: 1px solid #cb5a5e;
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    background-color: #cb5a5e;
+    margin-left: 5px;
+}

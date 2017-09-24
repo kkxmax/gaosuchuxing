@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/dao/impl/DAOImpl.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/delegate/WebDelegate.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/admin/layout/scripts/application.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/web.xml</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/activity/details.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/custom/admin/js_for_activity.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/tiles.xml</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/admin/pages/scripts/table-managed.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/domain/ActivityDetailVO.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/custom/admin/js_for_activity_form.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/domain/ActivityVO.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/util/NumberUtil.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/service/impl/ServiceImpl.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/admin/pages/scripts/table-ajax.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/controller/IndexController.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/controller/AdminController.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/dao/WebDAO.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/layout/application.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/custom/admin/js_for_station.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/shop/form.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/activity/form.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/activity/show.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/admin/pages/scripts/table-editable.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/service/WebService.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/common/Constant.java</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/assets/custom/admin/js_for_group.js</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/order/show.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/web/WEB-INF/jsp/admin/activity/list.jsp</file>
+            <file>file:/D:/MyWorks/GaosuChuxing/svn/source/GaosuChuxing/src/java/com/gaosuchuxing/util/DateUtil.java</file>
+        </group>
+    </open-files>
+</project-private>

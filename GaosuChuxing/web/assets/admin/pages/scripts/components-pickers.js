@@ -3,10 +3,18 @@ var ComponentsPickers = function () {
     var handleDatePickers = function () {
 
         if (jQuery().datepicker) {
+//            $('.date-picker').datepicker({
+//                rtl: Metronic.isRTL(),
+//                orientation: "left",
+//                autoclose: true
+//            });
+
             $('.date-picker').datepicker({
                 rtl: Metronic.isRTL(),
-                orientation: "left",
-                autoclose: true
+                orientation: "right",
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                language: 'zh-CN'
             });
             //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
         }

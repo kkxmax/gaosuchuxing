@@ -31,7 +31,7 @@
                         <label class="col-md-2 control-label">关键词</label>
 
                         <div class="col-md-4">
-                            <form:input type="text" path="keyword" cssClass="form-control" placeholder="输入关键词"/>
+                            <form:input type="text" path="keyword" cssClass="form-control" placeholder="输入反馈内容"/>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
 
                         <div class="col-md-4">
                             <form:select path="status" cssClass="form-control search-option">
-                                <form:option value="">--请选择角色--</form:option>
+                                <form:option value="">--请选择状态--</form:option>
                                 <form:option value="待处理">待处理</form:option>
                                 <form:option value="已处理">已处理</form:option>
                             </form:select>
