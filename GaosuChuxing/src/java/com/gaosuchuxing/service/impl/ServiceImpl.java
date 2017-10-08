@@ -135,13 +135,13 @@ public class ServiceImpl implements WebService {
     }   
 
     @Override
-    public List<StationVO> getStationList(String keyword, int districtId, String status, int offset, int size, String sortColumn, String sort) {
-        return webDAO.getStationList(keyword, districtId, status, offset, size, sortColumn, sort);
+    public List<StationVO> getStationList(String keyword, int districtId, String adcode, String status, int offset, int size, String sortColumn, String sort) {
+        return webDAO.getStationList(keyword, districtId, adcode, status, offset, size, sortColumn, sort);
     }
 
     @Override
-    public int countAllStation(String keyword, int districtId, String status) {
-        return webDAO.countAllStation(keyword, districtId, status);
+    public int countAllStation(String keyword, int districtId, String adcode, String status) {
+        return webDAO.countAllStation(keyword, districtId, adcode, status);
     }
 
     @Override

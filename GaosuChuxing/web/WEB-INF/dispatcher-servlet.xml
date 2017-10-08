@@ -53,5 +53,9 @@
     <bean id="/admin/*" class="com.gaosuchuxing.controller.AdminController">
         <property name="webDelegate" ref="WebDelegate"/>
     </bean>
+    
+    <bean id="/service/*" class="com.gaosuchuxing.controller.ServiceController">
+        <property name="webDelegate" ref="WebDelegate"/>
+    </bean>
 
 </beans>

@@ -339,7 +339,7 @@ function onSearchAddress() {
         addressSearch.search(searchKey, function(status, result){
             if(status=='complete'){
                 map.setZoom(15);
-                map.setCenter(result.districtList[0].center);                
+                map.setCenter(result.districtList[0].location);                
             }
         });
     }

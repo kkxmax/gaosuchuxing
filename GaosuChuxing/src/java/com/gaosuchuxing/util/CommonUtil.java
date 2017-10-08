@@ -103,7 +103,7 @@ public class CommonUtil {
     }
     
     public static File getShopImageDir(HttpServletRequest request) {
-        File imageDir = new File(getImageDir(request), Constant.STATION_IMAGE_DIR);
+        File imageDir = new File(getImageDir(request), Constant.SHOP_IMAGE_DIR);
         
         if (!imageDir.exists())
             imageDir.mkdir();

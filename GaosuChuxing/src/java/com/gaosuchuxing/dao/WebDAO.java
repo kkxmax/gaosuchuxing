@@ -50,8 +50,8 @@ public interface WebDAO {
     
     public List<PermissionVO> getPermissionList();
     
-    public List<StationVO> getStationList(String keyword, int districtId, String status, int offset, int size, String sortColumn, String sort);
-    public int countAllStation(String keyword, int districtId, String status);
+    public List<StationVO> getStationList(String keyword, int districtId, String adcode, String status, int offset, int size, String sortColumn, String sort);
+    public int countAllStation(String keyword, int districtId, String adcode, String status);
     public StationVO getStation(int id);
     public StationVO getStationByName(String stationName);
     public void addNewStation(StationVO newStation);

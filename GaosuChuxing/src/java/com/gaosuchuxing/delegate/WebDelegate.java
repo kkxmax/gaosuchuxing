@@ -119,12 +119,20 @@ public class WebDelegate {
         return webService.getPermissionList();
     }
   
+    public List<StationVO> getStationList(String keyword, int districtId, String adcode, String status, int offset, int size, String sortColumn, String sort) {
+        return webService.getStationList(keyword, districtId, adcode, status, offset, size, sortColumn, sort);
+    }
+
+    public int countAllStation(String keyword, int districtId, String adcode, String status) {
+        return webService.countAllStation(keyword, districtId, adcode, status);
+    }
+    
     public List<StationVO> getStationList(String keyword, int districtId, String status, int offset, int size, String sortColumn, String sort) {
-        return webService.getStationList(keyword, districtId, status, offset, size, sortColumn, sort);
+        return webService.getStationList(keyword, districtId, null, status, offset, size, sortColumn, sort);
     }
 
     public int countAllStation(String keyword, int districtId, String status) {
-        return webService.countAllStation(keyword, districtId, status);
+        return webService.countAllStation(keyword, districtId, null, status);
     }
 
     public StationVO getStation(int id) {

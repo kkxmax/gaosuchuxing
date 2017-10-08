@@ -18,6 +18,48 @@ public class FeedbackVO {
     private String comment;
 
     private String status;
+    
+    private int deliverId;
+    
+    private String userName;
+    private String displayId;
+
+    private String deliverName;
+
+    public String getDeliverName() {
+        return deliverName;
+    }
+
+    public void setDeliverName(String deliverName) {
+        this.deliverName = deliverName;
+    }
+
+
+    public String getDisplayId() {
+        return displayId;
+    }
+
+    public void setDisplayId(String displayId) {
+        this.displayId = displayId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+
+    public int getDeliverId() {
+        return deliverId;
+    }
+
+    public void setDeliverId(int deliverId) {
+        this.deliverId = deliverId;
+    }
+
 
     public String getStatus() {
         return status;

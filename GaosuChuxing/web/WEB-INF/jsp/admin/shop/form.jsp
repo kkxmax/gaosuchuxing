@@ -153,10 +153,10 @@
                             <div class="col-md-5">
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 130px;">
-                                        <c:if test="${not empty showForm.imagePath}">
-                                            <img src="/${showForm.imagePath}" alt="Icon"/>
+                                        <c:if test="${not empty shopForm.imagePath}">
+                                            <img src="/${shopForm.imagePath}" alt="Icon"/>
                                         </c:if>
-                                        <c:if test="${empty showForm.imagePath}">
+                                        <c:if test="${empty shopForm.imagePath}">
                                             <img src="<c:url value="/assets/admin/pages/img/no-image.png"/>" alt="Icon"/>
                                         </c:if>
                                     </div>

@@ -39,14 +39,14 @@ public class UserVO {
         this.name = name;
     }
 
-    private String weixinId;
+    private String wxOpenId;
 
-    public String getWeixinId() {
-        return weixinId;
+    public String getWxOpenId() {
+        return wxOpenId;
     }
 
-    public void setWeixinId(String weixinId) {
-        this.weixinId = weixinId;
+    public void setWxOpenId(String wxOpenId) {
+        this.wxOpenId = wxOpenId;
     }
 
     private String avatarPath;
@@ -87,6 +87,16 @@ public class UserVO {
 
     public void setOrderAmount(double orderAmount) {
         this.orderAmount = orderAmount;
+    }
+
+    private boolean status;
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
 }

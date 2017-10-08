@@ -67,6 +67,8 @@ public class Constant {
         public static final String ALL = "-1";
     }
     
+    public static final String BEIJING_ADCODE = "110000";
+    
     public static final String[] MANAGER_COLUMNS = new String[] {
         "managers.admin_id", "managers.name", "groups.name", "managers.reg_date"
     };
@@ -108,7 +110,7 @@ public class Constant {
     };
     
     public static final String[] FEEDBACK_COLUMNS = new String[] {
-        "feedbacks.id", "feedbacks.comment", "feedbacks.reg_date", "feedbacks.status"
+        "IFNULL(users.user_id, delivers.deliver_id)", "feedbacks.comment", "feedbacks.reg_date", "feedbacks.status"
     };
     
     public static final String[] DELIVER_COLUMNS = new String[] {
