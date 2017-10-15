@@ -12,6 +12,8 @@
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="<c:url value="/assets/plugins/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet" type="text/css"/>
+        <link href="<c:url value="/assets/plugins/simple-line-icons/simple-line-icons.min.css"/>" rel="stylesheet" type="text/css"/>
         <link href="<c:url value="/assets/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css"/>
         <!-- END GLOBAL MANDATORY STYLES -->
 
@@ -45,6 +47,68 @@
         <input type="hidden" id="get-map-icon-red-url" value="<c:url value="/assets/img/map_icon_red.png"/>" />
         <input type="hidden" id="get-map-icon-grey-url" value="<c:url value="/assets/img/map_icon_grey.png"/>" />
         <input type="hidden" id="get-btn-addcart-icon-url" value="<c:url value="/assets/img/foodshop_btn_addcart@2x.png"/>" />
+        <input type="hidden" id="share-coupon-url" value="<c:url value="/advertise"/>" />
+        
+        <!-- Modal -->
+        <div class="modal fade bs-modal-sm" id="confirm-yes-no-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" style="margin-top: 45%;">
+                <div class="modal-content">
+                    <div class="modal-header" style="border-bottom: 0;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 class="modal-title" style="color: #3598dc;"><i class="fa fa-question-circle" style="font-size: 26px;"></i></h3>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="modal-title" id="confirm-yes-no-msg" style="font-family: Microsoft YaHei;"></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="button-yes"> 确认 </button>
+                        <button type="button" class="btn default" data-dismiss="modal"> 取消 </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        
+        <div class="modal fade bs-modal-sm" id="confirm-message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" style="margin-top: 45%;">
+                <div class="modal-content">
+                    <div class="modal-header" style="border-bottom: 0;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 class="modal-title" style="color: #dfba49;"><i class="fa fa-warning" style="font-size: 26px;"></i></h3>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="modal-title" id="confirm-message-msg" style="font-family: Microsoft YaHei;"></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" data-dismiss="modal"> 是 </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        
+        <div class="modal fade bs-modal-sm" id="information-message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" style="margin-top: 45%;">
+                <div class="modal-content">
+                    <div class="modal-header" style="border-bottom: 0;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h3 class="modal-title" style="color: #3598dc;"><i class="fa fa-info-circle" style="font-size: 26px;"></i></h3>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="modal-title" id="information-message-msg" style="font-family: Microsoft YaHei;"></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" data-dismiss="modal"> 是 </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
 
         <script src="<c:url value="/assets/js/jquery.min.js"/>" type="text/javascript"></script>
         <script src="<c:url value="/assets/js/bootstrap.min.js"/>" type="text/javascript"></script>

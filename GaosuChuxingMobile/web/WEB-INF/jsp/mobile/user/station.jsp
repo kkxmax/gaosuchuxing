@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<div onclick="onGoShoppingCart()" style="background: url('<c:url value="/assets/img/home_shopcart@2x.png"/>') no-repeat; width: 38px; height: 38px; position: fixed; bottom: 75px; right: 10px; background-size: 38px 38px"></div>
+<div onclick="location.href='cart'" style="background: url('<c:url value="/assets/img/home_shopcart@2x.png"/>') no-repeat; width: 38px; height: 38px; position: fixed; bottom: 75px; right: 10px; background-size: 38px 38px"></div>
 
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="btn-group btn-group-justified" role="group">

@@ -11,7 +11,27 @@ public class OrderCouponVO {
     private int id;
     private int orderId;
     private double amount;
-    private Date regDate;
+    private Date regDate;    
+    private boolean status;    
+    private int userCouponId;
+
+    public int getUserCouponId() {
+        return userCouponId;
+    }
+
+    public void setUserCouponId(int userCouponId) {
+        this.userCouponId = userCouponId;
+    }
+
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
 
     public int getOrderId() {
         return orderId;

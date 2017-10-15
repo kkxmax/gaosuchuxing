@@ -23,6 +23,19 @@ body {
 .navbar-fixed-bottom .menu-btn.active p  {
     color: #3e6dbb;
 }
+
+
+.menu-btn .badge {
+    margin-top: -13px;
+    background-color: #F3565D;
+    padding: 3px;
+    height: 14px;
+    font-size: 12px !important;
+    line-height: 0.7;
+    margin-left: -13px;
+    border: solid 1px #F3565D;
+}
+
 .navbar-fixed-bottom .menu-index img {
     content: url("../img/tab_icon_index_pre@3x.png");
 }

@@ -176,7 +176,7 @@ public class DeliverController extends MultiActionController {
         
         webDelegate.setOrderStatus(orderId, status);
         
-        CommonUtil.sendMessageResponse(response);
+        CommonUtil.sendSuccessMessageResponse(response);
                 
         return null;
     }
@@ -258,11 +258,22 @@ public class DeliverController extends MultiActionController {
     
     @RequestMapping("/setNotificationStatus")
     public String setNotificationStatus(HttpServletRequest request, HttpServletResponse response) {
+        if (!CommonUtil.isLoginDeliver(request)) {
+            return "redirect:/deliver/logout";
+        }
+        
+        DeliverVO loginDeliver = (DeliverVO) request.getSession().getAttribute(Constant.SESSION_INFO.LOGIN_DELIVER);
+        int deliverId = loginDeliver.getId();
+        
         int notificationId = NumberUtil.strToInt(request.getParameter("notificationId"));
         
-        webDelegate.setNotificationStatus(notificationId);
+        webDelegate.setNotificationStatus(notificationId, -1, loginDeliver.getId());       
         
-        CommonUtil.sendMessageResponse(response);
+        loginDeliver = webDelegate.getDeliverById(deliverId);        
+        request.getSession().setAttribute(Constant.SESSION_INFO.LOGIN_DELIVER, loginDeliver);
+        
+        
+        CommonUtil.sendSuccessMessageResponse(response);
                 
         return null;
     }
@@ -287,7 +298,7 @@ public class DeliverController extends MultiActionController {
             return new ModelAndView("redirect:/deliver/logout");
         }
         
-        if (CommonUtil.isEmptyStr(request.getParameter("code"))) {
+        if (CommonUtil.isEmptyStr(request.getParameter("code")) && !Constant.DEV_MODE) {
             String redirectUrl = new String(request.getRequestURL());
             
             String wxAuthCodeUrl = WxConfig.AUTH_CODE_URL;
@@ -305,7 +316,7 @@ public class DeliverController extends MultiActionController {
         } else {
             String code = request.getParameter("code");
                         
-            String tokenBody = WxRequest.requestAccessToken(code);
+            String tokenBody = WxRequest.getAccessToken(code);
             
             String imgUrl = null;
             
@@ -315,6 +326,8 @@ public class DeliverController extends MultiActionController {
                     String accessToken = tokenJson.getString("access_token");
                     String openId = tokenJson.getString("openid");
                     
+//                    String openId = "omFwR00yfzLJj67aiUAN6aoRtz_k";
+                    
 //                    if (CommonUtil.isEmptyStr(accessToken) || CommonUtil.isEmptyStr(openId)) {
 //                        CommonUtil.sendMessageResponse(response, "invaild token: " + tokenBody);
 //                        return null;
@@ -323,7 +336,7 @@ public class DeliverController extends MultiActionController {
 //                    CommonUtil.sendMessageResponse(response, "access_token: " + accessToken);
 //                    CommonUtil.sendMessageResponse(response, "openid: " + openId);
                     
-                    String userInfoBody = WxRequest.requestUserInfo(accessToken, openId);
+                    String userInfoBody = WxRequest.getUserInfo(accessToken, openId);
                     
                     if (userInfoBody != null) {
                         System.out.println("userInfo: " + userInfoBody);
@@ -396,7 +409,7 @@ public class DeliverController extends MultiActionController {
             webDelegate.setDeliverPassword(deliver.getId(), newPwd);
             deliver.setPassword(newPwd);
             request.getSession().setAttribute(Constant.SESSION_INFO.LOGIN_DELIVER, deliver);
-            CommonUtil.sendMessageResponse(response);
+            CommonUtil.sendSuccessMessageResponse(response);
         }
         
         return null;
@@ -421,9 +434,9 @@ public class DeliverController extends MultiActionController {
         
         String feedback = request.getParameter("feedback");
         
-        webDelegate.addFeedback(deliver.getId(), feedback);
+        webDelegate.addFeedback(-1, deliver.getId(), feedback);
         
-        CommonUtil.sendMessageResponse(response);
+        CommonUtil.sendSuccessMessageResponse(response);
         
         return null;
     }

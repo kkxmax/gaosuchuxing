@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <c:if test="${goodsList != null}">
     <div style="padding: 10px 10px 0px 10px; font-size: 12px">
@@ -19,7 +20,8 @@
                     <div class="row init-div title">${goods.name}</div>
                     <div class="row init-div des">${goods.description}</div>
                     <div class="row init-div">
-                        <div class="col-xs-6 init-div" style="color: #ff3c64">￥${goods.price}</div>
+                        <fmt:formatNumber pattern="#0.00" var="fmtPrice" value="${goods.price}" />
+                        <div class="col-xs-6 init-div" style="color: #ff3c64">￥${fmtPrice}</div>
                         <div class="col-xs-6 init-div cart_oper">
                             <c:if test="${goods.qty > 0}">
                                 <div class="oper-group" id="btn-group-${goods.id}">

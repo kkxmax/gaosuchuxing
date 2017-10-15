@@ -196,6 +196,16 @@ function searchRoute() {
 
 $(function() {
 //    $('#btn-search-route').hide();
+//    $('#welcome-modal').modal();
+    $.ajax({
+        url: "welcomeUser",
+        data: {id: $('#welcomeId').val()},
+        success: function(result) {
+            if (result != null && result == 'welcome') {
+                $('#welcome-modal').modal();
+            }
+        }
+    });
 });
 
 

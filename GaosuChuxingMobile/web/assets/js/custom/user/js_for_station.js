@@ -24,3 +24,4 @@ function onGoPharmacy(_stationId) {
 
     form.submit();
 }
+

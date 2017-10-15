@@ -89,4 +89,34 @@ public class DateUtil {
         calendar.add(Calendar.DAY_OF_MONTH, day);
         return calendar.getTime();
     }
+    
+    /*
+     *  get delivery time
+     */
+    public static String getDeliveryTime() {
+        Calendar calendar = Calendar.getInstance();
+        
+        int yy = calendar.get(Calendar.YEAR);
+        int mm = calendar.get(Calendar.MONTH);
+        int dd = calendar.get(Calendar.DAY_OF_MONTH);
+        
+        calendar.set(yy, mm, dd, 11, 0);
+        
+        Date date = new Date();
+        
+        if (date.after(calendar.getTime())) {
+            return "下午06:00";
+        } else {
+            return "中午12:00";
+        }
+    }
+    
+    public static Date getValidToDate(Date fromDate) {
+        Calendar calendar = Calendar.getInstance();
+        if (fromDate != null)
+            calendar.setTime(fromDate);
+        calendar.add(Calendar.MONTH, 6);
+        return calendar.getTime();
+    }
+    
 }

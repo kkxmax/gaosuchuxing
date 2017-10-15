@@ -9,7 +9,7 @@
                 <div class="list_row_internal">
                     <div class="col-xs-4 init-div">
                         <div class="row_img">
-                            <img src="../../uploads/img/ic_product_01.png">
+                            <img src="/${shop.imagePath}">
                         </div>
                     </div>
                     <div class="col-xs-8 init-div" style="padding-top: 5px">

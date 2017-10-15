@@ -10,6 +10,17 @@ import java.util.Date;
 public class UserVO {
     
     private int id;
+    private String userId;
+    private String name;
+    private String wxOpenId;
+    private String avatarPath;
+    private Date regDate;
+    private int orderCount;
+    private double orderAmount;
+    private boolean status;
+    private boolean isNew;
+    private int badge;
+    
 
     public int getId() {
         return id;
@@ -19,8 +30,6 @@ public class UserVO {
         this.id = id;
     }
 
-    private String userId;
-
     public String getUserId() {
         return userId;
     }
@@ -28,8 +37,6 @@ public class UserVO {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
-    private String name;
 
     public String getName() {
         return name;
@@ -39,8 +46,6 @@ public class UserVO {
         this.name = name;
     }
 
-    private String wxOpenId;
-
     public String getWxOpenId() {
         return wxOpenId;
     }
@@ -48,8 +53,6 @@ public class UserVO {
     public void setWxOpenId(String wxOpenId) {
         this.wxOpenId = wxOpenId;
     }
-
-    private String avatarPath;
 
     public String getAvatarPath() {
         return avatarPath;
@@ -59,8 +62,6 @@ public class UserVO {
         this.avatarPath = avatarPath;
     }
 
-    private Date regDate;
-
     public Date getRegDate() {
         return regDate;
     }
@@ -68,8 +69,6 @@ public class UserVO {
     public void setRegDate(Date regDate) {
         this.regDate = regDate;
     }
-
-    private int orderCount;
 
     public int getOrderCount() {
         return orderCount;
@@ -79,8 +78,6 @@ public class UserVO {
         this.orderCount = orderCount;
     }
 
-    private double orderAmount;
-
     public double getOrderAmount() {
         return orderAmount;
     }
@@ -88,8 +85,6 @@ public class UserVO {
     public void setOrderAmount(double orderAmount) {
         this.orderAmount = orderAmount;
     }
-
-    private boolean status;
 
     public boolean getStatus() {
         return status;
@@ -99,4 +94,19 @@ public class UserVO {
         this.status = status;
     }
 
+    public boolean getIsNew() {
+        return isNew;
+    }
+    
+    public void setIsNew(boolean isNew) {
+        this.isNew = isNew;
+    }
+
+    public int getBadge() {
+        return badge;
+    }
+
+    public void setBadge(int badge) {
+        this.badge = badge;
+    }
 }

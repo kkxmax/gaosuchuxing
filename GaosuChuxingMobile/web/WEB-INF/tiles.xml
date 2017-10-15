@@ -47,7 +47,7 @@
     
     <!-- mobile user station layout tiles -->
     <definition name="mobileUserStationLayout" extends="mobileUserApplicationLayout">
-<!--        <put-attribute name="title" value="服务区" type="string" />-->
+        <put-attribute name="title" value="" type="string" />
         <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/station.jsp" />
         <put-list-attribute name="javascripts" cascade="true">
             <add-attribute value="/assets/js/custom/user/js_for_station.js" />
@@ -62,6 +62,13 @@
     </definition>
     <!-- mobile user takeout layout tiles -->
     
+    <!-- mobile user takeout layout tiles -->
+    <definition name="mobileUserPharmacyLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="医药健康" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/takeout.jsp" />
+    </definition>
+    <!-- mobile user takeout layout tiles -->
+    
     <!-- mobile user shop layout tiles -->
     <definition name="mobileUserShopLayout" extends="mobileUserApplicationLayout">
         <put-attribute name="title" value="点餐" type="string" />
@@ -72,17 +79,148 @@
     </definition>
     <!-- mobile user shop layout tiles -->
     
+    <!-- mobile user search layout tiles -->
+    <definition name="mobileUserSearchPharmacyLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/searchPharmacy.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_searchPharmacy.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user search layout tiles -->
+    
     <!-- mobile user submit layout tiles -->
     <definition name="mobileUserSubmitLayout" extends="mobileUserApplicationLayout">
         <put-attribute name="title" value="提交订单" type="string" />
         <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/submit.jsp" />
         <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" />
             <add-attribute value="/assets/js/custom/user/js_for_submit.js" />
         </put-list-attribute>
     </definition>
     <!-- mobile user submit layout tiles -->
     
     <definition name="goodsListLayout" template="/WEB-INF/jsp/mobile/user/goodsList.jsp" />
+    <definition name="searchListLayout" template="/WEB-INF/jsp/mobile/user/searchList.jsp" />
+    
+    <!-- mobile user submit layout tiles -->
+    <definition name="mobileUserSettleOrderLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="支付成功" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/settleOrder.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_settle.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user submit layout tiles -->
+    
+    <!-- mobile user orders layout tiles -->
+    <definition name="mobileUserOrdersLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="订单" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/orders.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_orders.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user submit layout tiles -->
+    
+    <definition name="userOrderListLayout" template="/WEB-INF/jsp/mobile/user/orderList.jsp" />
+    
+    <!-- mobile user order layout tiles -->
+    <definition name="mobileUserOrderLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="订单详情" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/order.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_order.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user order layout tiles -->
+    
+    <definition name="userOrderContentLayout" template="/WEB-INF/jsp/mobile/user/orderContent.jsp" />
+    
+    <!-- mobile user notification layout tiles -->
+    <definition name="mobileUserNotificationLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="消息中心" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/notification.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_notification.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user notification layout tiles -->
+    
+    <!-- mobile user activityNotice layout tiles -->
+    <definition name="mobileUserActivityNoticeLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="消息中心" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/activityNotice.jsp" />
+    </definition>
+    <!-- mobile user activityNotice layout tiles -->
+    
+    <!-- mobile user profile layout tiles -->
+    <definition name="mobileUserProfileLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="我的" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/profile.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_profile.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user profile layout tiles -->
+    
+    <!-- mobile user coupon layout tiles -->
+    <definition name="mobileUserCouponLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="我的优惠" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/coupon.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_coupon.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user coupon layout tiles -->
+    
+    <!-- mobile user feedback layout tiles -->
+    <definition name="mobileUserFeedbackLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="意见反馈" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/feedback.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_feedback.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user feedback layout tiles -->
+    
+    <!-- mobile user feedback layout tiles -->
+    <definition name="mobileUserFeedbackSuccessLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="意见反馈" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/feedbackSuccess.jsp" />
+    </definition>
+    <!-- mobile user feedback layout tiles -->
+    
+    <!-- mobile user about layout tiles -->
+    <definition name="mobileUserAboutLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="关于我们" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/about.jsp" />
+    </definition>
+    <!-- mobile user about layout tiles -->
+    
+    <!-- mobile user cart layout tiles -->
+    <definition name="mobileUserCartLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="购物车" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/cart.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_cart.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user cart layout tiles -->
+    
+    <!-- mobile adv layout tiles -->
+    <definition name="mobileAdvLayout" extends="mobileUserApplicationLayout">
+        <put-attribute name="title" value="红包新玩法" type="string" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/user/adv.jsp" />
+        <put-list-attribute name="javascripts" cascade="true">
+            <add-attribute value="/assets/js/custom/user/js_for_adv.js" />
+        </put-list-attribute>
+    </definition>
+    <!-- mobile user cart layout tiles -->
+    
+    <!-- 
+        mobile deliver layout 
+    -->
     
     <!-- mobile deliver login layout tiles -->
     <definition name="mobileDeliverLoginLayout" template="/WEB-INF/jsp/mobile/deliver/login.jsp" />
@@ -158,7 +296,7 @@
     <!-- mobile deliver about layout tiles -->
     <definition name="mobileDeliverAboutLayout" extends="mobileDeliverApplicationLayout">
         <put-attribute name="title" value="关于我们" type="string" />
-        <put-attribute name="body" value="/WEB-INF/jsp/mobile/deliver/about.jsp" />
+        <put-attribute name="body" value="/WEB-INF/jsp/mobile/about.jsp" />
     </definition>
     <!-- mobile deliver about layout tiles -->
     

@@ -8,7 +8,7 @@ package com.gaosuchuxing.mobile.domain;
 import java.util.Date;
 
 public class OrderDetailVO {
-    private int id;
+    private String id;
     private int orderId;
     private int goodsId;    
     private String goodsName;
@@ -75,11 +75,11 @@ public class OrderDetailVO {
         this.goodsName = goodsName;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

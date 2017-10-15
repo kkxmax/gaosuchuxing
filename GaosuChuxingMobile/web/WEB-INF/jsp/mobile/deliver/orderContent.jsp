@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-xs-4 init-div-horizontal">
                             <div class="col-xs-12 init-div-horizontal">
-                                <p class="init-div-vertical text-right" style="margin-right: 10px;font-size: 15px;margin-top: 5px">￥${goods.price}</p>
+                                <p class="init-div-vertical text-right" style="margin-right: 10px;font-size: 15px;margin-top: 5px">￥${goods.price*goods.qty}</p>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                                 <p class='text-right' style="font-size: 16px;margin-top: 3px">实付:</p>
                             </div>
                             <div class="col-xs-4 init-div-horizontal text-right" style=''>
-                                <p style="font-size: 19px;margin-right: 10px;color:red;font-weight: bold">￥${order.orderAmount - couponAmount}</p>
+                                <p style="font-size: 19px;margin-right: 10px;color:red;font-weight: bold">￥${order.orderAmount + order.shippingFee - couponAmount}</p>
                             </div>
                         </div>
                     </div>

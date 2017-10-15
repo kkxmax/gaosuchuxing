@@ -109,5 +109,25 @@ public class UserVO {
         this.isNew = isNew;
     }
 
+    private int badge;
+
+    public int getBadge() {
+        return badge;
+    }
+
+    public void setBadge(int badge) {
+        this.badge = badge;
+    }
+    
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
 
 }

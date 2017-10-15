@@ -80,12 +80,12 @@ public class OrderVO {
     }
 
 
-    public boolean isReady() {
+    public boolean getState() {
         return state;
     }
 
-    public void setReady(boolean ready) {
-        this.state = ready;
+    public void setState(boolean state) {
+        this.state = state;
     }
 
 

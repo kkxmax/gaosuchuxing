@@ -6,6 +6,7 @@
 package com.gaosuchuxing.mobile.delegate;
 
 import com.gaosuchuxing.mobile.domain.ActivityNoticeVO;
+import com.gaosuchuxing.mobile.domain.CouponVO;
 import com.gaosuchuxing.mobile.domain.DeliverVO;
 import com.gaosuchuxing.mobile.domain.GoodsKindVO;
 import com.gaosuchuxing.mobile.domain.GoodsVO;
@@ -13,11 +14,14 @@ import com.gaosuchuxing.mobile.domain.NotificationVO;
 import com.gaosuchuxing.mobile.domain.OrderCouponVO;
 import com.gaosuchuxing.mobile.domain.OrderDetailVO;
 import com.gaosuchuxing.mobile.domain.OrderVO;
+import com.gaosuchuxing.mobile.domain.ShareCouponVO;
 import com.gaosuchuxing.mobile.domain.ShopKindVO;
 import com.gaosuchuxing.mobile.domain.ShopVO;
 import com.gaosuchuxing.mobile.domain.StationVO;
+import com.gaosuchuxing.mobile.domain.UserCouponVO;
 import com.gaosuchuxing.mobile.domain.UserVO;
 import com.gaosuchuxing.mobile.service.WebService;
+import java.util.ArrayList;
 import java.util.List;
 
 public class WebDelegate {
@@ -104,6 +108,10 @@ public class WebDelegate {
         return webService.getOrderListByDeliver(deliverId, orderStatus);
     }
     
+    public List<OrderVO> getOrderListByUser(int userId, String orderStatus) {
+        return webService.getOrderListByUser(userId, orderStatus);
+    }
+    
     public int countAllOrder(int state, int deliverId, String orderNum, String userName, String deliverName, String orderStatus, String from, String to) {
         return webService.countAllOrder(state, deliverId, orderNum, userName, deliverName, orderStatus, from, to);
     }
@@ -128,12 +136,16 @@ public class WebDelegate {
         return webService.getOrderCouponList(orderId);
     }
     
-    public List<GoodsVO> getGoodsList(String keyword, int shopKindId, int shopId, int goodsKindId, int offset, int size, String sortColumn, String sort) {
-        return webService.getGoodsList(keyword, shopKindId, shopId, goodsKindId, offset, size, sortColumn, sort);
+    public List<GoodsVO> getGoodsListByShop(String keyword, int shopKindId, int shopId, int goodsKindId, int userId, int orderId, int offset, int size, String sortColumn, String sort) {
+        return webService.getGoodsListByShop(keyword, shopKindId, shopId, goodsKindId, userId, orderId, offset, size, sortColumn, sort);
     }
     
-    public int countAllGoods(String keyword, int shopKindId, int shopId, int goodsKindId) {
-        return webService.countAllGoods(keyword, shopKindId, shopId, goodsKindId);
+    public List<GoodsVO> getGoodsListByOrder(String keyword, int goodsKindId, int userId, int orderId, int offset, int size, String sortColumn, String sort) {
+        return webService.getGoodsListByOrder(keyword, goodsKindId, userId, orderId, offset, size, sortColumn, sort);
+    }
+    
+    public int countAllGoodsByOrder(String keyword, int shopKindId, int shopId, int goodsKindId) {
+        return webService.countAllGoodsByOrder(keyword, shopKindId, shopId, goodsKindId);
     }
     
     public GoodsVO getGoods(int id) {
@@ -176,8 +188,8 @@ public class WebDelegate {
         webService.addNewNotification(notification);
     }
 
-    public void setNotificationStatus(int notificationId) {
-        webService.setNotificationStatus(notificationId);
+    public void setNotificationStatus(int notificationId, int userId, int deliverId) {
+        webService.setNotificationStatus(notificationId, userId, deliverId);
     }
     
     public ActivityNoticeVO getActivityNotice(int id) {
@@ -188,16 +200,16 @@ public class WebDelegate {
         return webService.getStationByDeliver(deliverId);
     }
 
-    public void addFeedback(int deliverId, String feedback) {
-        webService.addFeedback(deliverId, feedback);
+    public void addFeedback(int userId, int deliverId, String feedback) {
+        webService.addFeedback(userId, deliverId, feedback);
     }
     
     public int getOrderCountByDeliver(int deliverId) {
         return webService.getOrderCountByDeliver(deliverId);
     }
      
-    public GoodsVO getGoodsByOrder(int goodsId, int userId) {
-        return webService.getGoodsByOrder(goodsId, userId);
+    public GoodsVO getGoodsByOrder(int goodsId, int shopId, int userId) {
+        return webService.getGoodsByOrder(goodsId, shopId, userId);
     }
 
     public UserVO getUserByWxOpenId(String wxOpenId) {
@@ -212,11 +224,119 @@ public class WebDelegate {
         webService.activeUser(wxOpenId, telNo);
     } 
     
-    public void updateUserImgUrl(String wxOpenId, String imgUrl) {
-        webService.updateUserImgUrl(wxOpenId, imgUrl);
+    public void updateUserImgUrl(String wxOpenId, String nick, String imgUrl) {
+        webService.updateUserImgUrl(wxOpenId, nick, imgUrl);
     }
     
     public void disableUserIsNew(String wxOpenId) {
         webService.disableUserIsNew(wxOpenId);
+    }
+    
+    public UserVO getUser(int userId) {
+        return webService.getUser(userId);
+    }
+        
+    public int hasOrder(int userId, int shopId) {
+        return webService.hasOrder(userId, shopId);
+    }
+
+    public String addNewOrder(int userId, int shopId, double shippingFee, int deliverId) {
+        return webService.addNewOrder(userId, shopId, shippingFee, deliverId);
+    }
+
+    public OrderVO getOrderInfo(int orderId, String orderNum, String searchKey) {
+        return webService.getOrderInfo(orderId, orderNum, searchKey);
+    }
+
+    public String addOrderDetail(int orderId, int goodsId, double price, int qty) {
+        return webService.addOrderDetail(orderId, goodsId, price, qty);
+    }
+
+    public void addNewOrderCoupon(int orderId, int userCouponId, double amount, int qty) {
+        webService.addNewOrderCoupon(orderId, userCouponId, amount, qty);
+    }
+
+    public void settleOrder(int orderId, String description) {
+        webService.settleOrder(orderId, description);
+    }
+    
+    public void makeNewOrderDetail(int orderId) {
+        webService.makeNewOrderDetail(orderId);
+    }
+
+    public void deleteOrderDetail(int orderId, String searchKey) {
+        webService.deleteOrderDetail(orderId, searchKey);
+    }
+    
+    public List<CouponVO> getBaseLoginCouponList() {
+        return webService.getBaseLoginCouponList();
+    }
+    
+    public List<CouponVO> getBaseShareCouponList() {
+        return webService.getBaseShareCouponList();
+    }
+
+    public CouponVO getCoupon(int id) {
+        return webService.getCoupon(id);
+    }
+
+    public List<UserCouponVO> getUserCouponList(int userId) {
+        return webService.getUserCouponList(userId);
+    }
+    
+    public void addNewUserCoupon(int userId, int couponId, int qty) {
+        webService.addNewUserCoupon(userId, couponId, qty);
+    }
+    
+    public int getConsumeUserCouponIdByUser(int userId, int couponId) {
+        return webService.getConsumeUserCouponIdByUser(userId, couponId);
+    }
+
+    public boolean consumeCoupon(int userId, int couponId, int orderId) {
+        return webService.consumeCoupon(userId, couponId, orderId);
+    }
+    
+    public List<OrderDetailVO> getOrderDetailListByPay(int orderId) {
+        return webService.getOrderDetailListByPay(orderId);
+    }
+    
+    public void addWelcomeCoupon(ArrayList<UserCouponVO> welcomes) {
+        webService.addWelcomeCoupon(welcomes);
+    }
+    
+    public UserCouponVO getUserCoupon(int id) {
+        return webService.getUserCoupon(id);
+    }
+    
+    public UserCouponVO getUnusedUserCoupon(int userId, int couponId) {
+        return webService.getUnusedUserCoupon(userId, couponId);
+    }
+        
+    public void addNewShareCoupon(ArrayList<ShareCouponVO> shares) {
+        webService.addNewShareCoupon(shares);
+    }
+    
+    public List<ShareCouponVO> getShareCouponList(String num) {
+        return webService.getShareCouponList(num);
+    }
+    
+    public ShareCouponVO getShareCoupon(String id) {
+        return webService.getShareCoupon(id);
+    }
+    
+    public void setShareCoupon(long id) {
+        webService.setShareCoupon(id);
+    }
+    
+    public void addNewCoupon(CouponVO coupon) {
+        webService.addNewCoupon(coupon);
+    }
+    
+    public List<CouponVO> getBaseFullTypeCouponList() {
+        return webService.getBaseFullTypeCouponList();
+    }
+    
+    public List<CouponVO> getBaseUnlimitedCouponList() {
+        return webService.getBaseUnlimitedCouponList();
     }
 }

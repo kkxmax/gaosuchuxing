@@ -2412,7 +2412,7 @@ public class AdminController extends MultiActionController {
                 item.put("DT_RowId", user.getId());
                 item.put("0", user.getUserId());
                 item.put("1", user.getName());
-                item.put("2", user.getAvatarPath());                                
+                item.put("2", "<img alt class='img-circle' style='height: 40px; max-width: 90px;' src='" + user.getAvatarPath() + "'></img>");
                 item.put("3", user.getOrderCount());
                 item.put("4", user.getOrderAmount());
                 

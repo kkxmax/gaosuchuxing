@@ -12,6 +12,7 @@ import java.util.HashSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.json.simple.JSONObject;
 
 public class CommonUtil {
     public static int getBitVal(int n, int pos) {
@@ -150,7 +151,22 @@ public class CommonUtil {
         }
     }
     
-    public static void sendMessageResponse(HttpServletResponse response) {
+    public static void sendSuccessMessageResponse(HttpServletResponse response) {
         sendMessageResponse(response, "success");
+    }
+    
+    public static void sendJSONResponse(HttpServletResponse response, JSONObject json) {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+
+        try {
+            json.writeJSONString(response.getWriter());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static String setXml(String return_code,String return_msg){  
+        return "<xml><return_code><![CDATA["+return_code+"]]></return_code><return_msg><![CDATA["+return_msg+"]]></return_msg></xml>";  
     }
 }

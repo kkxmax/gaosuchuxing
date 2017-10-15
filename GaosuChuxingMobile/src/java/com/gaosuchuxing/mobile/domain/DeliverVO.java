@@ -15,6 +15,15 @@ public class DeliverVO {
     private String telNo;
     private String password;
     private Date regDate;
+    private int badge;
+
+    public int getBadge() {
+        return badge;
+    }
+
+    public void setBadge(int badge) {
+        this.badge = badge;
+    }
 
     public int getId() {
         return id;

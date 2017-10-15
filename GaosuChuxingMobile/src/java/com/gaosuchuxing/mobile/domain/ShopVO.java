@@ -27,7 +27,17 @@ public class ShopVO {
     private String address;    
     private String shopKindName;    
     private int qty;    
-    private double amount;
+    private double amount;    
+    private int deliverId;
+
+    public int getDeliverId() {
+        return deliverId;
+    }
+
+    public void setDeliverId(int deliverId) {
+        this.deliverId = deliverId;
+    }
+
 
     public double getAmount() {
         return amount;

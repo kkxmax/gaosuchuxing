@@ -7,6 +7,7 @@ package com.gaosuchuxing.mobile.service.impl;
 
 import com.gaosuchuxing.mobile.dao.WebDAO;
 import com.gaosuchuxing.mobile.domain.ActivityNoticeVO;
+import com.gaosuchuxing.mobile.domain.CouponVO;
 import com.gaosuchuxing.mobile.domain.DeliverVO;
 import com.gaosuchuxing.mobile.domain.GoodsKindVO;
 import com.gaosuchuxing.mobile.domain.GoodsVO;
@@ -14,11 +15,14 @@ import com.gaosuchuxing.mobile.domain.NotificationVO;
 import com.gaosuchuxing.mobile.domain.OrderCouponVO;
 import com.gaosuchuxing.mobile.domain.OrderDetailVO;
 import com.gaosuchuxing.mobile.domain.OrderVO;
+import com.gaosuchuxing.mobile.domain.ShareCouponVO;
 import com.gaosuchuxing.mobile.domain.ShopKindVO;
 import com.gaosuchuxing.mobile.domain.ShopVO;
 import com.gaosuchuxing.mobile.domain.StationVO;
+import com.gaosuchuxing.mobile.domain.UserCouponVO;
 import com.gaosuchuxing.mobile.domain.UserVO;
 import com.gaosuchuxing.mobile.service.WebService;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceImpl implements WebService {
@@ -117,6 +121,11 @@ public class ServiceImpl implements WebService {
     public List<OrderVO> getOrderListByDeliver(int deliverId, String orderStatus) {
         return webDAO.getOrderListByDeliver(deliverId, orderStatus);
     }
+    
+    @Override
+    public List<OrderVO> getOrderListByUser(int userId, String orderStatus) {
+        return webDAO.getOrderListByUser(userId, orderStatus);
+    }
 
     @Override
     public int countAllOrder(int state, int deliverId, String orderNum, String userName, String deliverName, String orderStatus, String from, String to) {
@@ -150,13 +159,18 @@ public class ServiceImpl implements WebService {
     
     
     @Override
-    public List<GoodsVO> getGoodsList(String keyword, int shopKindId, int shopId, int goodsKindId, int offset, int size, String sortColumn, String sort) {
-        return webDAO.getGoodsList(keyword, shopKindId, shopId, goodsKindId, offset, size, sortColumn, sort);
+    public List<GoodsVO> getGoodsListByShop(String keyword, int shopKindId, int shopId, int goodsKindId, int userId, int orderId, int offset, int size, String sortColumn, String sort) {
+        return webDAO.getGoodsListByShop(keyword, shopKindId, shopId, goodsKindId, userId, orderId, offset, size, sortColumn, sort);
     }
 
     @Override
-    public int countAllGoods(String keyword, int shopKindId, int shopId, int goodsKindId) {
-        return webDAO.countAllGoods(keyword, shopKindId, shopId, goodsKindId);
+    public List<GoodsVO> getGoodsListByOrder(String keyword, int goodsKindId, int userId, int orderId, int offset, int size, String sortColumn, String sort) {
+        return webDAO.getGoodsListByOrder(keyword, goodsKindId, userId, orderId, offset, size, sortColumn, sort);
+    }
+
+    @Override
+    public int countAllGoodsByOrder(String keyword, int shopKindId, int shopId, int goodsKindId) {
+        return webDAO.countAllGoodsByShop(keyword, shopKindId, shopId, goodsKindId);
     }
 
     @Override
@@ -210,8 +224,8 @@ public class ServiceImpl implements WebService {
     }
 
     @Override
-    public void setNotificationStatus(int notificationId) {
-        webDAO.setNotificationStatus(notificationId);
+    public void setNotificationStatus(int notificationId, int userId, int deliverId) {
+        webDAO.setNotificationStatus(notificationId, userId, deliverId);
     }
 
     @Override
@@ -225,8 +239,8 @@ public class ServiceImpl implements WebService {
     }
 
     @Override
-    public void addFeedback(int deliverId, String feedback) {
-        webDAO.addFeedback(deliverId, feedback);
+    public void addFeedback(int userId, int deliverId, String feedback) {
+        webDAO.addFeedback(userId, deliverId, feedback);
     }
 
     @Override
@@ -235,8 +249,8 @@ public class ServiceImpl implements WebService {
     }
 
     @Override
-    public GoodsVO getGoodsByOrder(int goodsId, int userId) {
-        return webDAO.getGoodsByOrder(goodsId, userId);
+    public GoodsVO getGoodsByOrder(int goodsId, int shopId, int userId) {
+        return webDAO.getGoodsByOrder(goodsId, shopId, userId);
     }
 
     @Override
@@ -255,13 +269,148 @@ public class ServiceImpl implements WebService {
     }
 
     @Override
-    public void updateUserImgUrl(String wxOpenId, String imgUrl) {
-        webDAO.updateUserImgUrl(wxOpenId, imgUrl);
+    public void updateUserImgUrl(String wxOpenId, String nick, String imgUrl) {
+        webDAO.updateUserImgUrl(wxOpenId, nick, imgUrl);
     }
 
     @Override
     public void disableUserIsNew(String wxOpenId) {
         webDAO.disableUserIsNew(wxOpenId);
+    }
+
+    @Override
+    public int hasOrder(int userId, int shopId) {
+        return webDAO.hasOrder(userId, shopId);
+    }
+
+    @Override
+    public String addNewOrder(int userId, int shopId, double shippingFee, int deliverId) {
+        return webDAO.addNewOrder(userId, shopId, shippingFee, deliverId);
+    }
+
+    @Override
+    public OrderVO getOrderInfo(int orderId, String orderNum, String searchKey) {
+        return webDAO.getOrderInfo(orderId, orderNum, searchKey);
+    }
+
+    @Override
+    public String addOrderDetail(int orderId, int goodsId, double price, int qty) {
+        return webDAO.addOrderDetail(orderId, goodsId, price, qty);
+    }
+
+    @Override
+    public void addNewOrderCoupon(int orderId, int userCouponId, double amount, int qty) {
+        webDAO.addNewOrderCoupon(orderId, userCouponId, amount, qty);
+    }
+
+    @Override
+    public void settleOrder(int orderId, String description) {
+        webDAO.settleOrder(orderId, description);
+    }
+
+    @Override
+    public void makeNewOrderDetail(int orderId) {
+        webDAO.makeNewOrderDetail(orderId);
+    }
+
+    @Override
+    public void deleteOrderDetail(int orderId, String searchKey) {
+        webDAO.deleteOrderDetail(orderId, searchKey);
+    }
+
+    @Override
+    public List<CouponVO> getBaseLoginCouponList() {
+        return webDAO.getBaseLoginCouponList();
+    }
+    
+    @Override
+    public List<CouponVO> getBaseShareCouponList() {
+        return webDAO.getBaseShareCouponList();
+    }
+
+    @Override
+    public CouponVO getCoupon(int id) {
+        return webDAO.getCoupon(id);
+    }
+
+    @Override
+    public List<UserCouponVO> getUserCouponList(int userId) {
+        return webDAO.getUserCouponList(userId);
+    }
+
+    @Override
+    public void addNewUserCoupon(int userId, int couponId, int qty) {
+        webDAO.addNewUserCoupon(userId, couponId, qty);
+    }
+
+    @Override
+    public int getConsumeUserCouponIdByUser(int userId, int couponId) {
+        return webDAO.getConsumeUserCouponIdByUser(userId, couponId);
+    }
+
+    @Override
+    public boolean consumeCoupon(int userId, int couponId, int orderId) {
+        return webDAO.consumeCoupon(userId, couponId, orderId);
+    }
+
+    @Override
+    public List<OrderDetailVO> getOrderDetailListByPay(int orderId) {
+        return webDAO.getOrderDetailListByPay(orderId);
+    }
+
+    @Override
+    public void addWelcomeCoupon(ArrayList<UserCouponVO> welcomes) {
+        webDAO.addWelcomeCoupon(welcomes);
+    }
+
+    @Override
+    public UserVO getUser(int userId) {
+        return webDAO.getUser(userId);
+    }
+
+    @Override
+    public UserCouponVO getUserCoupon(int id) {
+        return webDAO.getUserCoupon(id);
+    }
+
+    @Override
+    public UserCouponVO getUnusedUserCoupon(int userId, int couponId) {
+        return webDAO.getUnusedUserCoupon(userId, couponId);
+    }
+
+    @Override
+    public void addNewShareCoupon(ArrayList<ShareCouponVO> shares) {
+        webDAO.addNewShareCoupon(shares);
+    }
+
+    @Override
+    public List<ShareCouponVO> getShareCouponList(String num) {
+        return webDAO.getShareCouponList(num);
+    }
+
+    @Override
+    public ShareCouponVO getShareCoupon(String id) {
+        return webDAO.getShareCoupon(id);
+    }
+
+    @Override
+    public void setShareCoupon(long id) {
+        webDAO.setShareCoupon(id);
+    }
+
+    @Override
+    public void addNewCoupon(CouponVO coupon) {
+        webDAO.addNewCoupon(coupon);
+    }
+
+    @Override
+    public List<CouponVO> getBaseFullTypeCouponList() {
+        return webDAO.getBaseFullTypeCouponList();
+    }
+
+    @Override
+    public List<CouponVO> getBaseUnlimitedCouponList() {
+        return webDAO.getBaseUnlimitedCouponList();
     }
     
     

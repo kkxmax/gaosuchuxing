@@ -62,7 +62,11 @@
         <property name="webDelegate" ref="WebDelegate"/>
     </bean>
     
-    <bean id="/wxAuth" class="com.gaosuchuxing.mobile.controller.IndexController">
+    <bean id="/advertise" class="com.gaosuchuxing.mobile.controller.IndexController">
+        <property name="webDelegate" ref="WebDelegate"/>
+    </bean>
+        
+    <bean id="/wxpayNotify" class="com.gaosuchuxing.mobile.controller.IndexController">
         <property name="webDelegate" ref="WebDelegate"/>
     </bean>
 
