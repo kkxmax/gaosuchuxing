@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+    Document   : Member.hbm.xml
+    Author     : Genesys Framework
+    Description:
+        Purpose of the document follows.
+-->
+<hibernate-mapping package="com.chengxin.bfip.model">
+  <class name="Item" table="ITEMS">
+    <id column="ID" name="id" type="int">
+      <generator class="identity" />
+    </id>
+    <property column="NUM" name="num"/>
+    <property column="ACCOUNT_ID" name="accountId"/>
+    <property column="NAME" name="name"/>
+    <property column="ADDR" name="addr"/>
+    <property column="COMMENT" name="comment"/>
+    <property column="NEED" name="need"/>
+    <property column="WEBURL" name="weburl"/>
+    <property column="UP_TIME" name="upTime"/>
+    <property column="DOWN_TIME" name="downTime"/>
+    <property column="CONTACT_NAME" name="contactName"/>
+    <property column="CONTACT_MOBILE" name="contactMobile"/>
+    <property column="IMG_PATH1" name="imgPath1"/>
+    <property column="IMG_PATH2" name="imgPath2"/>
+    <property column="IMG_PATH3" name="imgPath3"/>
+    <property column="IMG_PATH4" name="imgPath4"/>
+    <property column="IMG_PATH5" name="imgPath5"/>
+    <property column="WRITE_TIME" name="writeTime"/>
+    
+  </class>
+</hibernate-mapping>

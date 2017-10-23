@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+    Document   : Member.hbm.xml
+    Author     : Genesys Framework
+    Description:
+        Purpose of the document follows.
+-->
+<hibernate-mapping package="com.chengxin.bfip.model">
+  <class name="Account" table="ACCOUNTS">
+    <id column="ID" name="id" type="int">
+      <generator class="identity" />
+    </id>
+    <property column="AKIND" name="akind"/>
+    <property column="ACCOUNT" name="account"/>
+    <property column="CODE" name="code"/>
+    <property column="USEFUL" name="useful"/>
+    <property column="ELECT" name="elect"/>
+    <property column="LOGO" name="logo"/>
+    <property column="ENTER_KIND" name="enterKind"/>
+    <property column="ENTER_NAME" name="enterName"/>
+    <property column="XYLEIXING_ID" name="xyleixingId"/>
+    <property column="ADDR" name="addr"/>
+    <property column="WEBURL" name="weburl"/>
+    <property column="WEIXIN" name="weixin"/>
+    <property column="MAIN_JOB" name="mainJob"/>
+    <property column="CERT_IMAGE" name="certImage"/>
+    <property column="COMMENT" name="comment" type="text"/>
+    <property column="RECOMMEND" name="recommend" type="text"/>
+    <property column="BOSS_NAME" name="bossName"/>
+    <property column="BOSS_JOB" name="bossJob"/>
+    <property column="BOSS_MOBILE" name="bossMobile"/>
+    <property column="BOSS_WEIXIN" name="bossWeixin"/>
+    <property column="TEST_STATUS" name="testStatus"/>
+    <property column="BAN_STATUS" name="banStatus"/>
+    
+  </class>
+</hibernate-mapping>

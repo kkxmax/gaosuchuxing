@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Document : Member.hbm.xml Author : Genesys Framework Description: Purpose 
+	of the document follows. -->
+<hibernate-mapping package="com.chengxin.bfip.model">
+	<class name="Carousel" table="CAROUSELS">
+		<id column="ID" name="id" type="int">
+			<generator class="identity" />
+		</id>
+		<property column="IMG_NAME" name="imgName" />
+		<property column="IMG_SIZE" name="imgSize" />
+		<property column="IMG_URL" name="imgUrl" />
+		<property column="KIND" name="kind" />
+		<property column="ORD" name="ord" />
+		<property column="STATUS" name="status" />
+		<property column="VIDEO_ID" name="videoId" />
+		<property column="WRITE_TIME" name="writeTime" />
+
+	</class>
+</hibernate-mapping>
