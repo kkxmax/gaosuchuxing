@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_white">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        layout="@layout/nav_bar" />
+
+    <ScrollView
+        style="@style/layout_m0">
+        <RelativeLayout
+            style="@style/layout_mw"
+            android:paddingStart="@dimen/margin_normal"
+            android:paddingEnd="@dimen/margin_normal">
+
+            <LinearLayout
+                style="@style/layout_mw"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_type"/>
+
+                    <ToggleButton
+                        android:id="@+id/btn_make_eval_type_front"
+                        android:paddingLeft="@dimen/margin_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/row_height_normal"
+                        android:background="@color/color_transparent"
+                        android:drawableLeft="@drawable/btn_radio"
+                        android:checked="true"
+                        android:textColor="@color/txt_dark"
+                        android:textOn="@string/realname_cert_type_person"
+                        android:textOff="@string/realname_cert_type_person"/>
+
+                    <ToggleButton
+                        android:id="@+id/btn_make_eval_type_back"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/row_height_normal"
+                        android:background="@color/color_transparent"
+                        android:drawableLeft="@drawable/btn_radio"
+                        android:textColor="@color/txt_dark"
+                        android:textOn="@string/realname_cert_type_enterprise"
+                        android:textOff="@string/realname_cert_type_enterprise"/>
+
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:paddingTop="@dimen/margin_normal"
+                    android:paddingBottom="@dimen/margin_normal">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_half_photo"/>
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/image_avatar_height"
+                        android:layout_height="@dimen/image_avatar_height">
+                        <ImageButton
+                            android:id="@+id/btn_touxiang"
+                            style="@style/layout_mm"
+                            android:background="@color/color_gray_f5"/>
+                        <ImageView
+                            style="@style/layout_ww"
+                            android:src="@drawable/add_touxiang"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_name"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/edit_name"
+                        style="@style/layout_0m"
+                        android:background="@color/color_transparent"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/txt_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_body_order"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/edit_cert_number"
+                        style="@style/layout_0m"
+                        android:background="@color/color_transparent"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/txt_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:paddingTop="@dimen/margin_normal"
+                    android:paddingBottom="@dimen/margin_normal">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_body"
+                        android:layout_gravity="left"/>
+
+                    <Button
+                        android:layout_width="@dimen/image_cert_width"
+                        android:layout_height="@dimen/image_cert_height"
+                        android:paddingTop="@dimen/margin_large_top"
+                        android:drawableTop="@drawable/add_shenfenzheng"
+                        android:gravity="center"
+                        android:text="@string/add_cert"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/text_size_14"
+                        android:background="@color/color_blue_light"/>
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <RelativeLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/layout_ww"
+                            android:textColor="@color/txt_gray"
+                            android:text="@string/realname_cert_company"/>
+
+                        <TextView
+                            android:id="@+id/txt_enterprise"
+                            style="@style/layout_0w"
+                            android:lines="1"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:text="@string/str_sample"
+                            android:textColor="@color/txt_gray_light"/>
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_width="@dimen/margin_large_bellow"
+                        android:layout_height="@dimen/margin_large"
+                        android:src="@drawable/more"
+                        android:background="@color/color_transparent"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <RelativeLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/layout_ww"
+                            android:textColor="@color/txt_gray"
+                            android:text="@string/realname_cert_job"/>
+
+                        <TextView
+                            android:id="@+id/txt_job_type"
+                            style="@style/layout_0w"
+                            android:lines="1"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:text="@string/str_sample"
+                            android:textColor="@color/txt_gray_light"/>
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_width="@dimen/margin_large_bellow"
+                        android:layout_height="@dimen/margin_large"
+                        android:src="@drawable/more"
+                        android:background="@color/color_transparent"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <RelativeLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/layout_ww"
+                            android:textColor="@color/txt_gray"
+                            android:text="@string/realname_cert_place"/>
+
+                        <TextView
+                            android:id="@+id/txt_place"
+                            style="@style/layout_0w"
+                            android:lines="1"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:text="@string/str_sample"
+                            android:textColor="@color/txt_gray_light"/>
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_width="@dimen/margin_large_bellow"
+                        android:layout_height="@dimen/margin_large"
+                        android:src="@drawable/more"
+                        android:background="@color/color_transparent"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_position"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/edit_job"
+                        style="@style/layout_0m"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:background="@color/color_transparent"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/txt_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/row_height_normal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_weixin"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/edit_weixin_number"
+                        style="@style/layout_0m"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:background="@color/color_transparent"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/txt_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/Image_message">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_experience"/>
+
+                    <EditText
+                        android:id="@+id/edit_experiemce"
+                        style="@style/layout_0m"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:background="@color/color_transparent"
+                        android:textColor="@color/txt_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:layout_height="@dimen/Image_message">
+
+                    <TextView
+                        style="@style/layout_ww"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/text_size_14"
+                        android:text="@string/realname_cert_history"/>
+
+                    <EditText
+                        android:id="@+id/edit_history"
+                        style="@style/layout_0m"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:background="@color/color_transparent"
+                        android:textColor="@color/txt_dark"
+                        android:textSize="@dimen/text_size_14" />
+
+                </LinearLayout>
+
+                <View style="@style/splite_line_gray_8"/>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:paddingBottom="@dimen/margin_normal_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/layout_mw"
+                        android:paddingTop="@dimen/margin_normal_most"
+                        android:paddingBottom="@dimen/margin_normal_most"
+                        android:text="@string/realname_cert_explain1"/>
+
+                    <LinearLayout
+                        style="@style/layout_mw">
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/layout_mw"
+                        android:paddingBottom="@dimen/margin_normal_top">
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                    </LinearLayout>
+
+                    <View style="@style/splite_line_gray"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/layout_mw"
+                    android:paddingBottom="@dimen/margin_normal_top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/layout_mw"
+                        android:paddingTop="@dimen/margin_normal"
+                        android:paddingBottom="@dimen/margin_normal"
+                        android:text="@string/realname_cert_explain2"/>
+
+                    <LinearLayout
+                        style="@style/layout_mw">
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/layout_mw">
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                        <ToggleButton
+                            android:layout_width="@dimen/image_scroll_view_height"
+                            android:layout_height="@dimen/margin_extra"
+                            android:paddingRight="@dimen/margin_extra"
+                            android:drawableLeft="@drawable/btn_check"
+                            android:background="@color/color_transparent"
+                            android:textOn="@string/realname_cert_mutual"
+                            android:textOff="@string/realname_cert_mutual"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                style="@style/layout_ww"
+                android:src="@drawable/label_yijujue"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_normal_top"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_buy"
+        style="@style/layout_mw"
+        android:background="@color/color_gray_f5"
+        android:padding="@dimen/margin_normal">
+
+        <Button
+            android:id="@+id/btn_make_comedity"
+            style="@style/layout_mw"
+            android:layout_height="@dimen/login_button_height"
+            android:background="@drawable/round_rect_orange_gradient"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_16"
+            android:text="@string/realname_cert_button"/>
+
+    </LinearLayout>
+
+</LinearLayout>

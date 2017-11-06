@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topbar_height"
+        layout="@layout/nav_bar" />
+
+    <LinearLayout
+        style="@style/layout_mw"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/btn_comedity"
+            style="@style/layout_0m"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/txt_orange_gray"
+            android:background="@drawable/btn_person_tab"
+            android:checked="true"
+            android:textOn="@string/comedity"
+            android:textOff="@string/comedity"/>
+        <ToggleButton
+            android:id="@+id/btn_hot"
+            style="@style/layout_0m"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_large"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/txt_orange_gray"
+            android:background="@drawable/btn_person_tab"
+            android:textOn="@string/tab_hot"
+            android:textOff="@string/tab_hot"/>
+    </LinearLayout>
+
+    <FrameLayout
+        style="@style/layout_m0">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView1"
+            style="@style/layout_mm"
+            android:background="@color/color_gray_e5"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView2"
+            style="@style/layout_mm"
+            android:background="@color/color_gray_e5"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+</LinearLayout>
