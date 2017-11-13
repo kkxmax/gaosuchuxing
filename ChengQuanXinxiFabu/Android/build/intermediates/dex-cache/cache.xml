@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.1_c5d9b654306498e14619aec2d111b2bc5b352e7b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_e6e3d6db398effc217b7dac9fa26c317adbed5d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\libs\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_04f0c4199e27d5fd2d7223d54ba12b28a9f58921.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_94429390ef0793e3ab42add27fa9573aaf1f2f42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\libs\gson-2.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\gson-2.2.4_24d99c4c70863a6f57897d02c80dedf05080de67.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.2.1_a8fe334b95810ec5811a9a2b2fca2534c05306ef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.2.1_de4f635e0abe4c1a4035799b07ce54f02a7da706.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_ee45d7a5d2cbdd45738a770a66255eb5234d7e22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_ad21a187dea67f68a0f10ec716597e8891dbfd04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="D:\projects\20171019_beijing_full_info_platform_2stage\trunk\Source\Mobile\Android\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.1_8d73b968603d670ec0a93840f0e89b0d17bbcdbc.jar" />
+    </item>
+
+</items>
